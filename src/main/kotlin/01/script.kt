@@ -62,16 +62,17 @@ fun parseLine(line: String): Int {
     } else if (lastNumDigitChar == '_') {
         lastNumString
     } else {
-        listOf(lastNumDigit, lastNumString).maxBy {
-                p -> p.first
-        }
+        listOf(lastNumDigit, lastNumString).maxBy { p -> p.first }
     }
 
+    /*
     return if (first.first == last.first) {
         parseInt("${first.second}")
     } else {
         parseInt("${first.second}${last.second}")
     }
+    */
+    return parseInt("${first.second}${last.second}")
 }
 
 fun getDigitCharForNumStringOrNull(value: String?): Char {
